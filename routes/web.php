@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('frontend.index');
+})->name('index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -23,4 +23,4 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__.'/auth.php';
 
 // frontend 
-Route::get('/index', [HomeController::class, 'index'])->name('index');
+// Route::get('/index', [HomeController::class, 'index'])->name('index');
